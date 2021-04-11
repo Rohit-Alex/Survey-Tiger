@@ -1,5 +1,6 @@
 import React from "react";
 import "./description.css";
+import { Link } from "react-router-dom";
 
 function description({ questionOne, questionTwo, allOption1, allOption2 }) {
   return (
@@ -35,6 +36,11 @@ function description({ questionOne, questionTwo, allOption1, allOption2 }) {
             </>
           );
         })}
+      </div>
+      <div>
+        <Link to="/">
+          <button className="btn">Confirm</button>
+        </Link>
       </div>
     </div>
   );
