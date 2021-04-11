@@ -10,6 +10,9 @@ function Choice({
   setQuestionTwo,
   setOption1,
   setOption2,
+  setRenderQ1,
+  setRenderQ2,
+  setDescrip
 }) {
   const history = useHistory();
   const handleClick = () => {
@@ -18,18 +21,34 @@ function Choice({
   const [dropdown, setDropdown] = useState("");
   const [additem, setAdditem] = useState([]);
   const [inputitem, setInputitem] = useState("");
+  const [count, setCount] = useState(1);
 
   const [secondadditem, setSecondadditem] = useState([]);
   const [secinputitem, setSecinputitem] = useState("");
   const handleAddQue1 = () => {
     setOption1(additem);
-
+    setRenderQ1(true);
+    setDescrip(true);
+    if (count % 2 !== 0) {
+      if (dropdown === "1") setDropdown("2");
+    else setDropdown("1");
     alert("question added");
+  }
+    else alert(" click on publish ");
+    setCount((prev) => prev + 1);
+    
   };
   const handleAddQue2 = () => {
     setOption2(secondadditem);
-
+    setRenderQ2(true);
+    setDescrip(true);
+    if (count % 2 !== 0) {
+      if (dropdown === "1") setDropdown("2");
+    else setDropdown("1");
     alert("question added");
+  }
+    else alert(" click on publish ");
+    setCount((prev) => prev + 1);
   };
   return (
     <div class="container">
@@ -82,9 +101,11 @@ function Choice({
                     id="add"
                     type="submit"
                     onClick={() => {
-                             setInputitem("");
-                             setAdditem([...additem].concat(inputitem))}
-}
+                      if (inputitem !== "") {
+                        setInputitem("");
+                        setAdditem([...additem].concat(inputitem));
+                      }
+                    }}
                   >
                     +
                   </button>
@@ -98,11 +119,7 @@ function Choice({
             <div class="button_container">
               {additem.length === 4 && (
                 <div>
-                  <button
-                    class="button_publish"
-                    onClick={handleAddQue1}
-                    
-                  >
+                  <button class="button_publish" onClick={handleAddQue1}>
                     Add Question
                   </button>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -149,10 +166,13 @@ function Choice({
                     id="add"
                     type="submit"
                     onClick={() => {
-                             setInputitem("");
-                      setSecondadditem([...secondadditem].concat(secinputitem))
-                            }
-                    }
+                      if (secinputitem !== "") {
+                        setSecinputitem("");
+                        setSecondadditem(
+                          [...secondadditem].concat(secinputitem)
+                        );
+                      }
+                    }}
                   >
                     +
                   </button>
