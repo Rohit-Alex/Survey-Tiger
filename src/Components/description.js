@@ -1,5 +1,5 @@
 import React from "react";
-import "./description.css";
+import "./Description.css";
 import { Link } from "react-router-dom";
 
 function description({ questionOne, questionTwo, allOption1, allOption2 }) {
