@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.logo_image {
+  padding-top: 20vh;
+  padding-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub_container {
+  padding-bottom: 30px;
+}
+.question > div {
+  border: lightgrey 2px solid;
+}
+.question > div > input {
+  width: 21rem;
+  height: 20px;
+  border-style: none;
+}
+.question > div > button {
+  height: 26px;
+
+  border-style: none;
+}
+h4 {
+  text-align: left;
+}
+
+.option_container > div {
+  border: lightgrey 2px solid;
+}
+.option_container > div > input {
+  width: 20rem;
+  height: 20px;
+  border-style: none;
+}
+.option_container > div > button {
+  height: 26px;
+  border-style: none;
+}
+
+select {
+  background: lightgrey;
+  width: 15rem;
+  height: 40px;
+  font-size: 1rem;
+}
+option:hover {
+  background-color: rgb(228, 189, 15);
+}
+#add {
+  color: green;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+#remove {
+  color: red;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+.ss {
+  padding-bottom: 10px;
+}
+.button_publish {
+  white-space: normal;
+  border-style: none;
+  border: 1px rgb(146, 38, 38);
+  background-color: brown;
+  color: white;
+  width: 8rem;
+  height: 30px;
+  font-size: 0.8rem;
+}

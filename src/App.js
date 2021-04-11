@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./Components/Header";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { useState } from "react";
+import Choice from "./Components/Choice";
+import Description from "./Components/description";
 
 function App() {
+  const [questionOne, setQuestionOne] = useState(
+    "Which of the following apps you have on your phone?"
+  );
+  const [questionTwo, setQuestionTwo] = useState(
+    "Do you have LinkedIn install edon your phone?"
+  );
+  const [allOption1, setOption1] = useState([]);
+  const [allOption2, setOption2] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={Header} />
+
+          <Route exact path="/choice">
+            <Choice
+              questionOne={questionOne}
+              questionTwo={questionTwo}
+              setQuestionOne={setQuestionOne}
+              setQuestionTwo={setQuestionTwo}
+              setOption1={setOption1}
+              setOption2={setOption2}
+            />
+          </Route>
+          <Route eaxct path="/description">
+            <Description
+              questionOne={questionOne}
+              questionTwo={questionTwo}
+              allOption1={allOption1}
+              allOption2={allOption2}
+            />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
