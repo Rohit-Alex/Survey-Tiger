@@ -81,7 +81,10 @@ function Choice({
                   <button
                     id="add"
                     type="submit"
-                    onClick={() => setAdditem([...additem].concat(inputitem))}
+                    onClick={() => {
+                             setInputitem("");
+                             setAdditem([...additem].concat(inputitem))}
+}
                   >
                     +
                   </button>
@@ -98,7 +101,7 @@ function Choice({
                   <button
                     class="button_publish"
                     onClick={handleAddQue1}
-                    // onClick={() => setOption1(additem)}
+                    
                   >
                     Add Question
                   </button>
@@ -145,8 +148,10 @@ function Choice({
                   <button
                     id="add"
                     type="submit"
-                    onClick={() =>
+                    onClick={() => {
+                             setInputitem("");
                       setSecondadditem([...secondadditem].concat(secinputitem))
+                            }
                     }
                   >
                     +
